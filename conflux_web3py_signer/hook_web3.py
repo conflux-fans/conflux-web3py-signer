@@ -7,7 +7,7 @@ eth_account.account.Account = cfx_account.Account
 eth_account.Account = cfx_account.Account
 eth_account.signers.local.LocalAccount = cfx_account.LocalAccount
 
-from cfx2eth_bridge.hacked_signing import construct_sign_and_send_raw_middleware
+from conflux_web3py_signer.hacked_signing import construct_sign_and_send_raw_middleware
 
 import web3.middleware
 import web3.middleware.signing

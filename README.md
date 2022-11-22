@@ -2,6 +2,21 @@
 
 This is a library used to use `web3.py` on conflux-bridge(?). This library hacks the signing machanism of `web3.py`.
 
+## Install
+
+``` bash
+pip install conflux-web3py-signer
+```
+
+## How to use
+
+Import `conflux_we3py_signer` before import `web3`.
+
+```python
+import conflux_web3py_signer
+import web3
+```
+
 ## How
 
 ### Transaction Cast
