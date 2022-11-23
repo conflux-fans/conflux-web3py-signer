@@ -190,7 +190,8 @@ def fit_to_conflux(w3: "Web3", transaction: TxParams) -> TxParams:
         response = w3.provider.make_request("cfx_estimateGasAndCollateral", [transaction])
         response = cast(RPCResponse, response)
         if "error" in response:
-            raise Exception("estimate failed")
+            # print(transaction)
+            raise ValueError(response["error"])
         else:
             transaction["storageLimit"] = response['result']['storageCollateralized']
 

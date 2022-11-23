@@ -5,7 +5,7 @@ from setuptools import (
     setup,
 )
 
-VERSION = "1.0.0-beta.1"
+VERSION = "1.0.0-beta.2"
 DESCRIPTION = 'Plugin to monkey patch web3.py to support cfx2eth-bridge'
 with open('./README.md') as readme:
     long_description = readme.read()
@@ -13,7 +13,8 @@ with open('./README.md') as readme:
 extras_require = {
     'tester': [
         "pytest>=6.2.5,<7",
-        "typing_extensions"
+        "typing_extensions",
+        "brownie",
         # "py-geth>=3.8.0,<4",
     ],
     'linter': [
@@ -58,7 +59,7 @@ extras_require['dev'] = (
 # Setting up
 setup(
     # the name must match the folder name 'verysimplemodule'
-    name="conflux-we3py-signer",
+    name="conflux-web3py-signer",
     version=VERSION,
     author="Conflux-Dev",
     author_email="wenda.zhang@confluxnetwork.org",
@@ -66,13 +67,16 @@ setup(
     long_description_content_type="text/markdown",
     long_description=long_description,
     packages=find_packages(),
-    package_data={"conflux_web3_bridge": ["py.typed"]},
-    url='https://github.com/conflux-chain/python-conflux-sdk',
+    package_data={"conflux_web3py_signer": ["py.typed"]},
+    url='https://github.com/conflux-fans/conflux-web3py-signer',
     install_requires=[
         "cfx-account>=0.1.0b9",
-        "web3>=6.0.0b1",
+        "web3>=5.30",
     ],  # add any additional packages that
     # needs to be installed along with your package. Eg: 'caer'
+    entry_points={
+        "console_scripts": ["cfx-brownie=cfx_brownie._cli:main"],
+    },
     extras_require=extras_require,
     keywords=['python', 'conflux', 'blockchain'],
     classifiers=[
