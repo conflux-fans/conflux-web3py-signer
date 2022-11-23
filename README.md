@@ -4,11 +4,31 @@ This is a library used to use `web3.py` on conflux-bridge(?). This library hacks
 
 ## Install
 
+This library requires python >= 3.7
+
+It is recommended to use this library in a virtual environment.
+
+``` bash
+python -m venv venv
+source ./venv/bin/activate
+```
+
+or 
+
+``` bash
+conda create -n venv python=3.7
+conda activate venv
+```
+
+Then install in the virtual environment
+
 ``` bash
 pip install conflux-web3py-signer
 ```
 
 ## How to use
+
+### Basic Usage
 
 Import `conflux_we3py_signer` before import `web3`.
 
@@ -17,7 +37,22 @@ import conflux_web3py_signer
 import web3
 ```
 
-## How
+### Use with Brownie
+
+Firstly, you are supposed to install brownie and add conflux-bridge endpoint to brownie networks
+
+``` bash
+pip install eth-brownie
+cfx-brownie networks add Conflux cfx-testnet-bridge host=http://xxx.xxx.xxx chainid=1
+```
+
+Then use with command-line with target network.
+
+``` bash
+cfx-brownie --network cfx-testnet-bridge
+```
+
+## What is Done
 
 ### Transaction Cast
 
