@@ -42,7 +42,7 @@ import web3
 Firstly, you are supposed to install brownie and add [conflux-bridge endpoints](https://docs.nftrainbow.xyz/products/rpc-bridge) to brownie networks
 
 ``` bash
-pip install conflux_web3py_signer[brownie]
+pip install "conflux_web3py_signer[brownie]"
 cfx-brownie networks add Conflux cfx-testnet-bridge host=https://cfx2ethtest.nftrainbow.cn chainid=1
 ```
 
@@ -50,6 +50,19 @@ Then use with command-line with target network.
 
 ``` bash
 cfx-brownie --network cfx-testnet-bridge
+```
+
+For example, `brownie console` usage:
+
+``` bash
+cfx-brownie console --network cfx-testnet-bridge
+```
+
+Check in the console if connected: 
+
+```
+>>> network.is_connected()
+True
 ```
 
 ## What is Done
