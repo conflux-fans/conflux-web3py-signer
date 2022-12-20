@@ -11,6 +11,9 @@ with open('./README.md') as readme:
     long_description = readme.read()
 
 extras_require = {
+    'brownie': [
+        "eth-brownie==1.19.2",
+    ],
     'tester': [
         "pytest>=6.2.5,<7",
         "typing_extensions",
@@ -70,7 +73,7 @@ setup(
     package_data={"conflux_web3py_signer": ["py.typed"]},
     url='https://github.com/conflux-fans/conflux-web3py-signer',
     install_requires=[
-        "cfx-account>=0.1.0b9",
+        "cfx-account>=1.0.0",
         "web3>=5.30",
     ],  # add any additional packages that
     # needs to be installed along with your package. Eg: 'caer'

@@ -39,11 +39,11 @@ import web3
 
 ### Use with Brownie
 
-Firstly, you are supposed to install brownie and add conflux-bridge endpoint to brownie networks
+Firstly, you are supposed to install brownie and add [conflux-bridge endpoints](https://docs.nftrainbow.xyz/products/rpc-bridge) to brownie networks
 
 ``` bash
-pip install eth-brownie
-cfx-brownie networks add Conflux cfx-testnet-bridge host=http://xxx.xxx.xxx chainid=1
+pip install conflux_web3py_signer[brownie]
+cfx-brownie networks add Conflux cfx-testnet-bridge host=https://cfx2ethtest.nftrainbow.cn chainid=1
 ```
 
 Then use with command-line with target network.
