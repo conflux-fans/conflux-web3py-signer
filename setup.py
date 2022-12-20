@@ -5,7 +5,7 @@ from setuptools import (
     setup,
 )
 
-VERSION = "1.0.0-beta.2"
+VERSION = "1.0.0-beta.3"
 DESCRIPTION = 'Plugin to monkey patch web3.py to support cfx2eth-bridge'
 with open('./README.md') as readme:
     long_description = readme.read()
